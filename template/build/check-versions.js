@@ -14,7 +14,7 @@ var versionRequirements = [
   },
   {
     name: 'npm',
-    currentVersion: exec('npm --version'),
+    currentVersion: exec('npm --version').split('\n')[0].split(/\s/).slice(-1)[0],    // if use smart-npm
     versionRequirement: packageConfig.engines.npm
   }
 ]
